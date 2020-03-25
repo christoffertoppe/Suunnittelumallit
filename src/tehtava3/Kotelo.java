@@ -45,12 +45,7 @@ public class Kotelo implements Laiteosa {
 
 	@Override
 	public void poistaOsa(Laiteosa osa) {
-		for (int i = 0; i < laiteosat.size(); i++) {
-			if (laiteosat.get(i).getNimi().equalsIgnoreCase(osa.getNimi())) {
-				laiteosat.remove(i);
-			}
-
-		}
+		laiteosat.remove(osa);
 	}
 
 	@Override

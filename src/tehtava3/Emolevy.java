@@ -33,14 +33,7 @@ public class Emolevy implements Laiteosa {
 
 	@Override
 	public void poistaOsa(Laiteosa osa) {
-		for (int i = 0; i < osat.size(); i++) {
-			if (osat.get(i).getNimi().equalsIgnoreCase(osa.getNimi())) {
-			System.out.println(osat.get(i).getNimi() + " poistettu");	
-				osat.remove(i);
-			
-			}
-		}
-
+		osat.remove(osa);
 	}
 
 	@Override

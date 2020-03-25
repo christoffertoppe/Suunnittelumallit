@@ -17,8 +17,7 @@ public class Main {
 		emolevy.lisaaOsa(muisti);
 		emolevy.lisaaOsa(verkkokortti);
 		emolevy.lisaaOsa(prosessori);
-		
-		System.out.println("kone maksaa: " + kotelo.getHinta());
+		System.out.println("\nkone maksaa: " + kotelo.getHinta());
 		kotelo.lisaaOsa(emolevy);
 		System.out.println("");
 		kotelo.listaaKaikki();
@@ -26,18 +25,10 @@ public class Main {
 		emolevy.poistaOsa(verkkokortti);
 		System.out.println("");
 		kotelo.listaaKaikki();
-		System.out.println("");
 		System.out.println("kone maksaa: " + kotelo.getHinta());		
 		System.out.println("");
 		kotelo.lisaaOsa(naytonOhjain);
-		System.out.println("kone maksaa: " + kotelo.getHinta());
-		kotelo.lisaaOsa(emolevy);
-		kotelo.poistaOsa(emolevy);
-		System.out.println("kone maksaa: " + kotelo.getHinta());
-		System.out.println("\n");
-		kotelo.listaaKaikki();
-		System.out.println("\n");
-		emolevy.listaaKaikki();
+
 	}
 
 }
