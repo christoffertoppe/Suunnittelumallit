@@ -1,0 +1,3 @@
+tehdasBoss = tehtava2b.BossTehdas
+
+tehdasAdidas = tehtava2b.AdidasTehdas
