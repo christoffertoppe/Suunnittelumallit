@@ -11,7 +11,7 @@ public class HawaiiPizza implements Pizza {
 
 	@Override
 	public int hinta() {
-		return 5;
+		return hinta;
 	}
 
 	@Override

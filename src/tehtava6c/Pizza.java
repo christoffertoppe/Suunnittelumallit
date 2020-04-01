@@ -2,7 +2,7 @@ package tehtava6c;
 
 interface Pizza {
 
-	String kuvaus = "Tuntematon Pizza";
+	String kuvaus = "Pelkkä pohja ja kastike";
 
 	String kuvaile();
 

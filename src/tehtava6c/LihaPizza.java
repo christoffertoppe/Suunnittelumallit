@@ -9,7 +9,7 @@ public class LihaPizza implements Pizza {
 	}
 	@Override
 	public int hinta() {
-		return 5;
+		return hinta;
 	}
 	@Override
 	public String kuvaile() {
