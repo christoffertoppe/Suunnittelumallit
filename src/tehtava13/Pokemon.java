@@ -5,7 +5,8 @@ public abstract class Pokemon {
 	String pokemonName;
 	int hp;
 	int exp;
-	Bonus visitor;
+
+	
 	Pokemon(Player player) {
 		this.player = player;
 	}
@@ -30,11 +31,8 @@ public abstract class Pokemon {
 		System.out.println("Exp: " + getExp());
 	}
 	
-	public abstract void accept(Bonus visitor);
+	public abstract int accept(Visitor visitor);
 
-	public abstract void attack(int giveBonus);		
-	public abstract void defend(int giveBonus);
-	public abstract void run(int giveBonus);
 
 
 }

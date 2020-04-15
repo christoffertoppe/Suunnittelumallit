@@ -4,6 +4,7 @@ public class Charizard extends Pokemon {
 	private int hp = 120;
 	private int exp = 50;
 	private String pokemonName = "[Charizard]";
+	private Visitor bonus = new Bonus();	
 	
 	Charizard(Player player) {
 		super(player);
@@ -19,20 +20,20 @@ public class Charizard extends Pokemon {
 	public void attack() {
 		exp = exp +8;
 		System.out.println("Attacking gave you 8 Exp");
-		
+		exp = exp + accept(bonus);
 	}
 
 	@Override
 	public void defend() {
 		exp = exp +5;
 		System.out.println("Defending gave you 5 Exp");
-		
+		exp = exp + accept(bonus);
 	}
 
 	@Override
 	public void run() {
 		System.out.println("Running away gave you 0 Exp");
-		
+		exp = exp + accept(bonus);
 	}
 
 	@Override
@@ -50,32 +51,9 @@ public class Charizard extends Pokemon {
 	}
 
 	@Override
-	public void attack(int giveBonus) {
-		int bonus = 8 + giveBonus;
-		exp = exp + 8 + giveBonus;
-		System.out.println("Attacking gave you "+ bonus +" total Exp");
-		
-	}
-
-	@Override
-	public void defend(int giveBonus) {
-		int bonus = 5 + giveBonus;
-		exp = exp + 5 + giveBonus;
-		System.out.println("Defending gave you "+ bonus +" total Exp");
-		
-	}
-
-	@Override
-	public void run(int giveBonus) {
-		int bonus = giveBonus;
-		exp = exp + giveBonus;
-		System.out.println("Running away gave you "+ bonus +" total Exp");
-		
-	}
-
-	@Override
-	public void accept(Bonus visitor) {
+	public int accept(Visitor visitor) {
 		// TODO Auto-generated method stub
+		return visitor.visit(this);
 		
 	}
 

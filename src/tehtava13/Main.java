@@ -26,15 +26,15 @@ public class Main {
 			}
 			
 			if(selection == 1) {
-				pokemon.attack(visitor.giveBonus(pokemon));
+				pokemon.attack();
 			}
 			
 			if(selection == 2) {
-				pokemon.defend(visitor.giveBonus(pokemon));
+				pokemon.defend();
 			}
 			
 			if(selection == 3) {
-				pokemon.run(visitor.giveBonus(pokemon));
+				pokemon.run();
 			}
 			/*
 			if(selection == 5) {

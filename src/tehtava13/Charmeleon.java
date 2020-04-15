@@ -4,6 +4,7 @@ public class Charmeleon extends Pokemon {
 	private int hp = 35;
 	private int exp = 10;
 	private String pokemonName = "[Charmeleon]";
+	private Visitor bonus = new Bonus();
 
 	Charmeleon(Player player) {
 		super(player);
@@ -22,7 +23,7 @@ public class Charmeleon extends Pokemon {
 	public void attack() {
 		exp = exp + 4;
 		System.out.println("Attacking gave you 4 Exp");
-		accept(visitor);
+		exp = exp + accept(bonus);
 		evolve();
 	}
 
@@ -30,12 +31,14 @@ public class Charmeleon extends Pokemon {
 	public void defend() {
 		exp = exp + 2;
 		System.out.println("Defending gave you 2 Exp");
+		exp = exp + accept(bonus);
 		evolve();
 	}
 
 	@Override
 	public void run() {
 		System.out.println("Running away gave you 0 Exp");
+		exp = exp + accept(bonus);
 		evolve();
 	}
 
@@ -52,38 +55,11 @@ public class Charmeleon extends Pokemon {
 	public int getExp() {
 		return exp;
 	}
-
-	@Override
-	public void attack(int giveBonus) {
-		int bonus = 4 + giveBonus;
-		exp = exp + 4 + giveBonus;
-		System.out.println("Attacking gave you " + bonus + " total Exp");
-		evolve();
-
-	}
-
-	@Override
-	public void defend(int giveBonus) {
-		int bonus = 2 + giveBonus;
-		exp = exp + 2 + giveBonus;
-		System.out.println("Defending gave you " + bonus + " total Exp");
-		evolve();
-
-	}
-
-	@Override
-	public void run(int giveBonus) {
-		int bonus = giveBonus;
-		exp = exp + giveBonus;
-		System.out.println("Running away gave you " + bonus + " total Exp");
-		evolve();
-
-	}
 	
 	@Override
-	public void accept(Bonus visitor) {
+	public int accept(Visitor visitor) {
 		// TODO Auto-generated method stub
-		visitor.giveBonus(this);
+		return visitor.visit(this);
 	}
 
 }
